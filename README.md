@@ -76,3 +76,27 @@ gulp.task("minify-css", function(){
   // 원하는 파일만 배열로 작성 가능
   // gulp.src(['foo.js', 'file1.js', 'file2.js'])
 ```
+
+# error 핸들링
+**1. gulp plumber설치**
+```{.javascript}
+  npm install --save-dev gulp-plumber
+```
+**2. task 작성**
+```{.javascript}
+var plumber = require('gulp-plumber');
+
+// plumber 테스트
+gulp.task("plumber-test", function(){
+  gulp.src("js/throwError.js") // js파일에는 문법오류를 넣어줌
+  .pipe( plumber({
+    erorHandler:onErrorHandler
+  }))
+  .pipe(uglify());
+});
+
+// error handler 정의
+function onErrorHandler( error ){
+  console.log( erorr );
+}
+```
