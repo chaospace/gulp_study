@@ -2,11 +2,11 @@
  gulp설치
   - npm install -g gulp-cli
   - gulpfile.js 파일 만들기
-  <pre>
-    <code>
-    // hello task
-    gulp.task("hello", function(){
-      return console.log("Gulp Hello~?^^");
-    });
-    </code>
-  </pre>
+<pre>
+  <code>
+  // hello task
+  gulp.task("hello", function(){
+    return console.log("Gulp Hello~?^^");
+  });
+  </code>
+</pre>
