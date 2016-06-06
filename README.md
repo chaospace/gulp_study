@@ -58,3 +58,21 @@ gulp.task("minify-css", function(){
   .pipe(gulp.dest("build/css"));
 });
 ```
+
+# 파일 통합( js, css ... )
+** 1. gulp concat 설치
+```{.javascript}
+  npm install --save-dev gulp-concat
+```
+** 2. task 작성
+```{.javascript}
+// file merge
+  var concat  = require("gulp-concat");
+  gulp.task("merge-js", function(){
+    gulp.src("js/*.js")
+    .pipe(concat("merge.js"))
+    .pipe(gulp.dest("build/js"));
+  });
+  // 원하는 파일만 배열로 작성 가능
+  // gulp.src(['foo.js', 'file1.js', 'file2.js'])
+```
